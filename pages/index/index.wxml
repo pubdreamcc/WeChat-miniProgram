@@ -1,0 +1,8 @@
+<view class='container'>
+  <image src='/images/123.png' class='avatar'></image>
+  <text class='name'>欢迎您，{{name}}</text>
+  <view class="goStudy">
+    <button bindtap='go'>开启小程序</button>
+  </view>
+  <text class='time'>当前时间：{{time}}</text>
+</view>

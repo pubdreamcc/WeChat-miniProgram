@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#00B26A",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "前端学习资源",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  }
+}
