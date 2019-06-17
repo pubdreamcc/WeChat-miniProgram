@@ -57,9 +57,10 @@ Page({
     
   },
   go: function () {
-    console.log(123)
-    console.log(this)
     this.setData({name: 'pubdreamcc'})
+    wx.navigateTo({
+      url: '/pages/logs/logs',
+    })
   },
 
   /**

@@ -8,7 +8,7 @@
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "前端学习资源",
     "backgroundTextStyle": "light",
-    "enablePullDownRefresh": false
+    "enablePullDownRefresh": true
   },
   "sitemapLocation": "sitemap.json"
 }
