@@ -9,5 +9,6 @@
     "navigationBarTitleText": "前端学习资源",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
