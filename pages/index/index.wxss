@@ -13,6 +13,12 @@ page{
   border-radius: 100rpx;
   margin-top: 150rpx;
 }
+.authorize{
+  font-size: 24rpx '微软雅黑';
+  font-weight: 600;
+  color: red;
+  margin-top: 200rpx;
+}
 .name{
   color: rgb(92, 231, 27);
   margin-top: 80rpx;

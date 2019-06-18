@@ -4,7 +4,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: '王展',
+    userInfo: {},
+    flag: false,
     time: (new Date()).toString().slice(16, 24)
   },
 
@@ -12,7 +13,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    // 获取用户信息
+    this.getUserInfo()
   },
 
   /**
@@ -44,23 +46,48 @@ Page({
   },
 
   /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
-  },
-
-  /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
     
   },
   go: function () {
-    this.setData({name: 'pubdreamcc'})
     wx.navigateTo({
       url: '/pages/logs/logs',
     })
+  },
+
+  handleUserInfo (data) {
+    // 如果用户点击允许授权
+    if (data.detail.rawData) {
+      this.getUserInfo()
+    } else {
+      // 如果用户点击拒绝授权
+      this.setData({
+        flag: false,
+        userInfo: {}
+      })
+    }
+  },
+
+  getUserInfo () {
+    // 获取用户信息
+    wx.getUserInfo({
+      success: (data) => {
+        this.setData({
+          flag: true,
+          userInfo: {
+            name: data.userInfo.nickName,
+            avatarUrl: data.userInfo.avatarUrl
+          }
+        })
+      }
+    })
+  },
+
+
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh()
   },
 
   /**

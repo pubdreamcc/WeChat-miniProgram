@@ -1,8 +1,9 @@
 <view class='container'>
-  <image src='/images/123.png' class='avatar'></image>
-  <text class='name'>欢迎您，{{name}}</text>
+  <image src='{{userInfo.avatarUrl}}' class='avatar' wx:if='{{flag}}'></image>
+  <button wx:else open-type='getUserInfo' class='authorize' bindgetuserinfo='handleUserInfo'>点击授权</button>
+  <text class='name' wx:if='{{flag}}'>欢迎您，{{userInfo.name}}</text>
   <view class="goStudy">
-    <button bindtap='go'>开启小程序</button>
+    <button bindtap='go' wx:if='{{flag}}'>开启小程序</button>
   </view>
   <text class='time'>当前时间：{{time}}</text>
 </view>
