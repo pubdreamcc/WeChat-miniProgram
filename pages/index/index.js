@@ -52,8 +52,8 @@ Page({
     
   },
   go: function () {
-    wx.navigateTo({
-      url: '/pages/logs/logs',
+    wx.switchTab({
+      url: '/pages/list/list',
     })
   },
 
