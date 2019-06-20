@@ -62,5 +62,20 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  toDetail (event) {
+    // 获取到点击的列表索引
+    const index = event.currentTarget.dataset.index
+    wx.navigateTo({
+      url: '/pages/detail/detail?index=' + index
+    })
+  },
+  carouselToDetail (event) {
+    // 获取到自定义的节点数据
+    const index = event.target.dataset.index
+    wx.navigateTo({
+      url: '/pages/detail/detail?index=' + index
+    })
   }
 })

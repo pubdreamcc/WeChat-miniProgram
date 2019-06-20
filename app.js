@@ -26,5 +26,8 @@ App({
    */
   onError: function (msg) {
     
+  },
+  data: {
+    audioPlay: false
   }
 })

@@ -1,4 +1,6 @@
 // movie/movie.js
+// 定义请求的url地址
+const url = 'http://t.yushu.im/v2/movie/top250'
 Page({
 
   /**
@@ -12,7 +14,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 发送ajax请求拿到电影数据
+    wx.request({
+      url: url,
+      method: 'GET',
+      success (res) {
+        console.log(res.data)
+      }
+    })
   },
 
   /**
