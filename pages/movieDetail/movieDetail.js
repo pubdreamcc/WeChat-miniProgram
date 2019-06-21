@@ -1,7 +1,4 @@
-// movie/movie.js
-// 定义请求的url地址
-const url = 'http://t.yushu.im/v2/movie/top250'
-// 获取到全局唯一的小程序实例
+// pages/movieDetail/movieDetail.js
 const app = getApp()
 Page({
 
@@ -9,23 +6,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-    movieData: []
+    movie: {},
+    movieActor: ''
+  },
+  hello () {
+    console.log(123)
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 发送ajax请求拿到电影数据
-    wx.request({
-      url: url,
-      method: 'GET',
-      success: (res) => {
-        this.setData({
-          movieData: res.data.subjects
-        })
-        app.movies = res.data.subjects
-      }
+    // 获取到页面路径中的id
+    const id = options.id
+    // 根据id值查找对应的电影
+    const movie = app.movies.find((item) => {
+      return item.id == id
+    })
+    let movieActor = ''
+    for (const item of movie.casts) {
+      movieActor += item.name + ','
+    }
+    movieActor = movieActor.slice(0, movieActor.length-1)
+    this.setData({
+      movie: movie,
+      movieActor: movieActor
     })
   },
 

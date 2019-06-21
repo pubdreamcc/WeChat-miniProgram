@@ -29,5 +29,6 @@ App({
   },
   data: {
     audioPlay: false
-  }
+  },
+  movies: []
 })
